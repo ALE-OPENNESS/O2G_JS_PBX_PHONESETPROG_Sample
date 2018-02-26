@@ -1,0 +1,161 @@
+body
+{
+    font-family: Verdana;
+}
+table
+{
+    border-collapse: separate;
+    border-radius:10px;
+    border: solid 0px #888888;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+td
+{
+    border:solid 1px;
+    border-color: #888888;
+    border-radius: 0px;
+    padding: 4px;
+    text-align:left;
+    vertical-align: middle;
+    font-size: 11px;
+    text-align: right;
+}
+
+#freeRangeListDetails, #deviceDetails, #deviceDynamicState, #deviceProgrammeableKeys{
+    text-align: left;
+}
+
+td + td {
+border-left-width: 0px;
+}
+
+tr + tr td{
+border-top-width: 0px;
+}
+
+table tr:first-child td:first-child{
+    border-top-left-radius: 10px;
+}
+
+table tr:first-child td:last-child{
+    border-top-right-radius: 10px;
+}
+
+table tr:last-child td:first-child{
+    border-bottom-left-radius: 10px;
+}
+
+table tr:last-child td:last-child{
+    border-bottom-right-radius: 10px;
+}
+
+.button
+{
+    border:solid 1px;
+    border-color: #555555;
+    height: 30px;
+    line-height: 30px;
+    width:160px;
+    display: block;
+    border-radius: 5px;
+    font-size: 11px;
+    background-color: #99BBCC;
+    cursor: pointer;
+    text-align:center;
+}
+
+.tab button:hover{
+    background-color: #7799AA;
+}
+
+.button:hover{
+    background-color: #7799AA;
+}
+
+.disabledButton
+{
+    border:solid 1px;
+    border-color: #999999;
+    vertical-align: middle;
+    height: 30px;
+    width:160px;
+    display: table-cell;
+    border-radius: 5px;
+    font-size: 11px;
+    color: #999999;
+    background-color: #DDDDDD;
+    cursor: pointer;
+    text-align:center;
+    pointer-events: none;
+}
+
+input{
+    width:200px;
+    height:20px;
+    margin: 2px;
+}
+
+select{
+    width:204px;
+    height:25px;
+    margin: 2px;
+    padding: 1px;
+}
+
+.container{
+    width: 500px;
+    display: inline-block;
+    border: 1px solid #CCCCCC;
+}
+
+.tab {
+    display: inline-block;
+    width: 600px;
+    height: 100px;
+    border: 1px solid #AAAAAA;
+    background-color: #D8D8D8;
+    border-radius: 100px;
+    margin-bottom: 1px;
+}
+
+.tab button {
+    background-color: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    border-radius: 20px 20px 0px 0px;
+    outline: none;
+    cursor: pointer;
+    margin: -9px -4px;
+    height: 50px;
+    width: 120px;
+    transition: 0.2s;
+    position:relative;
+    vertical-align: top;
+}
+
+.tab button.active {
+    background-color:#99BBCC;
+    font-weight: bold;
+    border: 1px solid #555555;
+    -height: 50px;
+}
+
+button.active:hover {
+    background-color: #7799AA;
+}
+
+.tab h3 {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.tabContent {
+    display: none;
+    padding: 6px 12px;
+    -border: 1px solid #ccc;
+    border-top: none;
+}

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/rest.js"></script>
+    <script>
+        closeSession(pbxList);
+    </script>
+</head>
+
+<body style="text-align:center;">
+
+    <div class="tab">
+        <h3>ROXE</h3>
+        <button id="oxeTabLink" class="tabLink" onclick="openTab('oxeTab')">OXE</button>
+        <button id="usersTabLink"class="tabLink" onclick="openTab('usersTab')">Users</button>
+        <button id="freeRangeListTabLink"class="tabLink" onclick="openTab('freeRangeListTab')">Free Range List</button>
+        <button id="phoneSetProgrammingTabLink"class="tabLink" onclick="openTab('phoneSetProgrammingTab')">Phone Set Programming</button>
+    </div>
+
+    <div id="oxeTab" class="tabContent">
+        <table cellspacing="0px">
+            <tr>
+                <td>
+                    <div id="getPbxList" class="disabledButton" onclick="pbxList();">GET OXEs</div>
+                </td>
+                <td>
+                    <select  id="pbxList">
+                </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="usersTab" class="tabContent">
+        <table cellspacing="0">
+            <tr>
+                <td>
+                    <div id="getPhoneNumbers" class="disabledButton" onclick="getPhoneNumbers();">Get phone numbers</div>
+                </td>
+                <td >
+                    <select id="phoneNumbers"></select>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td >
+                    <div id="createPhoneNumber" class="disabledButton" onclick="createPhoneNumber();">Create phone number</div>
+                </td>
+                <td >
+                    <label>Number</label>
+                    <input id="phoneNumber" />
+                    <br>
+                    <label>First Name</label>
+                    <input id="phoneNumberFirstName" />
+                    <br>
+                    <label>Last Name</label>
+                    <input id="phoneNumberLastName" />
+                    <br>
+                    <label>Set Type</label>
+                        <select id="phoneNumberSetType">
+                        <option value="ANALOG">ANALOG</option>
+                        <option value="VPS_4620">4620 (VPS + CLIP)</option>
+                        <option value="BG_OPUS">4302</option>
+                        <option value="MG_OPUS">4304</option>
+                        <option value="HG_OPUS">4321</option>
+                        <option value="UA_VVLE">4001</option>
+                        <option value="UA_VLE">4011</option>
+                        <option value="UA_LE">4012</option>
+                        <option value="UA_MR1">4023</option>
+                        <option value="UA_MR2">4034</option>
+                        <option value="UA_HE">4040</option>
+                        <option value="S0_Terminal">S0 Set</option>
+                        <option value="VPS_4610">4610 (VPS No CLIP)</option>
+                        <option value="UA_VLE_CORDLESS">4075</option>
+                        <option value="UA_DECT_2G">4074/Shell</option>
+                        <option value="GAP_HANDSET">GAP Handset</option>
+                        <option value="UA_VVLE_8">4003</option>
+                        <option value="UA_VVLE_3G">4004</option>
+                        <option value="UA_VLE_3G">4010</option>
+                        <option value="UA_LE_3G">4020</option>
+                        <option value="UA_MR2_3G">4035T</option>
+                        <option value="UA_VVLE_3G_TSC">4004 & TSC DECT</option>
+                        <option value="UA_VLE_3G_TSC">4010 & TSC DECT</option>
+                        <option value="UA_LE_3G_TSC">4021 (4020 & TSC DECT)</option>
+                        <option value="UA_MR2_3G_TSC">4036 (4035 & TSC DECT)</option>
+                        <option value="Z_CLICK_PHONE">ANALOG with 4980</option>
+                        <option value="UA_VVLE_3G_IP">4004 & TSC IP</option>
+                        <option value="UA_VLE_3G_IP">4010 & TSC IP</option>
+                        <option value="UA_LE_3G_IP">4022 (4020 & TSC IP)</option>
+                        <option value="UA_MR2_3G_IP">4037 (4035 & TSC IP)</option>
+                        <option value="GAP_ENHANCED">GAP +</option>
+                        <option value="PC_MultiMedia2">MULTIMEDIA PC 2</option>
+                        <option value="UA_VIRTUAL">UA VIRTUAL (4035 VIRTUAL)</option>
+                        <option value="Extern_Station">SIP device</option>
+                        <option value="Remote_Extension">Remote extension</option>
+                        <option value="NOE_A">4019</option>
+                        <option value="NOE_A_IP">IPTouch 4018</option>
+                        <option value="NOE_B">4029</option>
+                        <option value="NOE_B_IP">IPTouch 4028</option>
+                        <option value="NOE_C">4039</option>
+                        <option value="NOE_C_IP">IPTouch 4038</option>
+                        <option value="NOE_C_Color_IP">IPTouch 4068</option>
+                        <option value="MIPT_300">Mobile IPTouch</option>
+                        <option value="IPT_4008">IPTouch 4008</option>
+                        <option value="UA_LOOP">Loop Station</option>
+                        <option value="SIP_Extension">SIP extension</option>
+                        </select>
+                        <br>
+                    </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="freeRangeListTab" class="tabContent">
+        <table cellspacing="0px">
+            <tr>
+                <td >
+                    <div id="getFreeRangeLists" class="disabledButton" onclick="getFreeRangeLists();">Get free range lists</div>
+                </td>
+                <td >
+                    <select  id="freeRangeLists"></select>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="getFreeRangeListDetails" class="disabledButton" onclick="getFreeRangeListDetails();">Get free range list details</div>
+                </td>
+                <td id="freeRangeListDetails">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="createFreeRangeList" class="disabledButton" onclick="createFreeRangeList();">Create a free range list</div>
+                </td>
+                <td>
+                    <div>
+                        <label>Name</label>
+                        <input id="rangeName" />
+                        <br>
+                        <label>Range beginning</label>
+                        <input id="rangeBeginning" />
+                        <br>
+                        <label>Range end</label>
+                        <input id="rangeEnd" />
+                        <br>
+                        <label>Response Size</label>
+                        <input id="rangeResponseSize" />
+                        <br>
+                    </div>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="deleteFreeRangeList" class="disabledButton" onclick="deleteFreeRangeList();">Delete free range list</div>
+                </td>
+                <td id="deleteFreeRangeListResult">
+                </td>
+            </tr>
+            <tr>
+                <td >
+                    <div id="getFreeNumbers" class="disabledButton" onclick="getFreeNumbers();">Get free Numbers</div>
+                </td>
+                <td >
+                    <select id="freeNumbers"></select>
+                    <br>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+
+    <div id="phoneSetProgrammingTab" class="tabContent">
+        <table cellspacing="0px">
+            <tr>
+                <td>
+                    <div id="getPhoneNumbersPS" class="disabledButton" onclick="getPhoneNumbers();">Get phone numbers</div>
+                </td>
+                <td >
+                    <select id="phoneNumbersPS"></select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="getAllDevices" class="disabledButton" onclick="getAllDevices();">Get All Devices</div>
+                </td>
+                <td>
+                    <select  id="devices">
+                </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="getDevice" class="disabledButton" onclick="getDevice('');">Get Device details</div>
+                </td>
+                <td id="deviceDetails">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="getDeviceDynamicState" class="disabledButton" onclick="getDevice('dynamicState');">Get Device Dynamic State</div>
+                </td>
+                <td id="deviceDynamicState">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="getDeviceProgrammeableKeys" class="disabledButton" onclick="getDevice('programmeableKeys');">Get Programmable keys</div>
+                </td>
+                <td id="deviceProgrammeableKeys">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+
+
+    <script type="text/javascript">
+        openTab('oxeTab');
+    </script>
+</body>
+
+</html>
