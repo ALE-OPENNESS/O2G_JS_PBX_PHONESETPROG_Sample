@@ -1,9 +1,9 @@
-var SERVER_URL = "http://o2g-instance1.ale-aapp.com:80/api/rest/";
-var SERVER_URL_HTTPS = "https://o2g-instance1.ale-aapp.com:8443/api/rest";
-var SERVER_IP = "o2g-instance1.ale-aapp.com";
+var SERVER_URL = "";
+var SERVER_URL_HTTPS = "";
+var SERVER_IP = "";
 var serverUrl = "https://" + SERVER_IP + ":443/api/rest/";
-var login = "adminC7";
-var password = "admin@7C7";
+var login = "";
+var password = "";
 
 
 function doAuthent(pbxAction) {
